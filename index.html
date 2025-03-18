@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Mental Health Prediction</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        form { display: inline-block; text-align: left; margin-top: 20px; }
+        label { font-weight: bold; }
+        select, input { width: 100%; padding: 5px; margin: 5px 0; }
+        button { background-color: blue; color: white; padding: 10px; border: none; cursor: pointer; }
+        button:hover { background-color: darkblue; }
+    </style>
+</head>
+<body>
+    <h2>Student Mental Health Prediction</h2>
+
+    <form method="post">
+        <label>Age:</label>
+        <input type="number" name="Age" required><br>
+
+        <label>Gender:</label>
+        <select name="Gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select><br>
+
+        <label>Course:</label>
+        <select name="Course" required>
+            <option value="Engineering">Engineering</option>
+            <option value="Science">Science</option>
+            <option value="Arts">Arts</option>
+        </select><br>
+
+        <label>Year of Study:</label>
+        <input type="number" name="Year_of_Study" required><br>
+
+        <label>GPA (e.g., 3.5):</label>
+        <input type="text" name="GPA" required><br>
+
+        <label>Married:</label>
+        <select name="Married" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select><br>
+
+        <label>Anxiety:</label>
+        <select name="Anxiety" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select><br>
+
+        <label>Panic Attacks:</label>
+        <select name="Panic_Attacks" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select><br>
+
+        <label>Treatment:</label>
+        <select name="Treatment" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction is not none %}
+        <h3>Prediction: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
+
+
+
